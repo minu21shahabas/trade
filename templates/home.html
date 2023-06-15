@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .card-slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 100%;
+}
+
+.review-card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.username {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: aqua;
+  border-radius: 3rem;
+}
+
+.avatar img {
+    width: 100px; /* Adjust the width as per your preference */
+    height: 100px; /* Adjust the height as per your preference */
+    border-radius: 50%;
+    object-fit: cover;
+  }
+    
+    .nav-item a{
+        color: black;
+        font-size: 1.2rem;
+    }
+    .nav-item a:hover{
+        color: orange;
+    }
+    .inner_banner {
+  position: relative;
+}    .text-overlay {
+  position: absolute;
+  top: 55%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: rgb(19, 18, 18);
+  font-size: 60px;
+  text-align: center;
+  text-shadow: 2px 2px 4px #161616;}
+@media(max-width:767px) {  /* Adjust the max-width as per your requirements */
+  .text-overlay{
+    font-size:15px !important;
+    top: 30%; /* Change the font size to your desired value */
+  }
+}
+.card{
+  background-color: rgb(245, 240, 240)
+}
+.card:hover{
+  background-color: #34def5;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  border: none;
+}
+
+div.gallery:hover {
+  border:none
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f7f0f0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.card:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: rgb(12, 12, 12);
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card-img-blog{
+      height: 300px;
+    }
+    .card-blog{
+      height: 400px;
+    }
+.image{
+  opacity: 0.2;
+}
+@media (max-width: 768px) {
+    #images {
+      width: 330px; /* Set image width to 100% of the container */
+      height: 250px; /* Let the height adjust proportionally */
+      margin-top: 40px; /* Adjust the margin as per your design */
+    }
+  }
+  @media (max-width: 768px) {
+    #image {
+      width: 350px;
+      height: 300px;
+      padding-left: 10px;
+      padding-right: 10px; /* Set image width to 100% of the container */
+       /* Adjust the margin as per your design */
+    }
+  }
+.cards{
+  background-color: aliceblue;
+  color: black;
+}
+li{
+    list-style:none;
+  }
+   .footer-col{
+    color: aliceblue;
+  }
+    li a {
+  
+  color: rgb(8, 8, 8);
+   font-size:x-large;
+  text-align: center;
+  list-style:none !important;
+    }
+    .footer{
+  width:100%;
+  padding-top: 20px;
+  background-color:#161616;
+  color: aliceblue;
+}
+.container{
+  width:100% !important;
+}
+.footer-col a {
+  padding-top: 20px;
+    color: rgb(249, 249, 253); 
+  }
+.column {
+  float: left;
+  width: 20%;
+  height: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+@media(max-width:767px){
+  #meet{
+    margin-left: 10px !important;
+    margin-top: 20px !important;
+  }
+}
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+/* Add some shadows to create a card effect */
+.cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+/* Some left and right padding inside the container */
+#card {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+#card::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+@media(max-width:767px){
+  #divs{
+    margin-left: 25px;
+  }
+}
+
+/* .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+}
+
+.button:hover {
+  background-color: #555;
+} */
+
+/* Add some shadows to create a card effect */
+/*  */
+</style>
+<script>
+  // Function to handle smooth scrolling
+  function scrollToAboutUs() {
+    var aboutusSection = document.getElementById('about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Add an event listener to the About link in the navbar
+  var aboutButton = document.querySelector('a[href="#about"]');
+  aboutButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    scrollToAboutUs();
+  });
+</script>
+<script>
+  // Function to handle smooth scrolling
+  function scrollToSERVICES() {
+    var aboutusSection = document.getElementById('services');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Add an event listener to the About link in the navbar
+  var aboutButton = document.querySelector('a[href="#services"]');
+  aboutButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    scrollToSERVICES();
+  });
+</script>
+
+<body>
+  
+    <div>
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+          <div>
+<b style="font-size: 30px;"> MyTradings</b>
+        </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'homes' %}" style="margin-right: 50px;">
+                  Home
+                 </b></a>            </li>
+                 
+              <li class="nav-item">
+                <b><a class="nav-link" href="#about"  style="margin-right: 50px;">
+                  About
+                </b></a>            </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="#services" style="margin-right: 50px;">
+                  Services
+                </b></a>            </li> 
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                   Contact
+                  </b></a>         </li>  
+                  <li class="nav-item">
+                    <b><a class="nav-link" href="{% url 'log' %}" style="margin-right: 50px;">
+                     Logout
+                    </b></a>         </li>  
+                  
+                    </div>   
+            </ul>
+          </div>  
+        </nav>
+        <div  id="home">
+          <div class="inner_banner">
+
+            <img src="http://themebeer.com/html/trade/images/slider-img-1.jpg" data-aos="zoom-in" width="100%" class="img-fluid">
+            <div >
+                <span class="text-overlay" style="font-size:x-larger; text-shadow: 2px 2px 4px #161616;">Making Your Worldwide Trading Easy</span><br>
+            </div>
+          </div>
+        </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-sm-12" style="margin: 0 auto;">
+                  <div class="row">
+              
+                <div class="col-sm-3 pl-4"style="margin-top: 10px;" id="divs">
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://e7.pngegg.com/pngimages/890/595/png-clipart-green-and-blue-earth-globe-illustration-earth-globe-icon-globe-miscellaneous-globe-thumbnail.png" alt="Card image cap" style="width:180px; height:70px ;padding-top: 10px; padding-left: 100px;">
+                    <div class="card-body">
+                      <h3 style="color: rgb(15, 15, 15); text-align: center;">Wide Product </h3>
+                      <p style="color: rgb(10, 10, 10); text-align: justify;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 pl-4"style="margin-top: 10px;" id="divs">
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://png.pngtree.com/png-vector/20190505/ourmid/pngtree-vector-price-tag-icon-png-image_1023076.jpg" alt="Card image cap"style=" width:180px; height:70px ;padding-top: 10px; padding-left: 100px;">
+                    <div class="card-body">
+                      <h3 style="color: rgb(10, 10, 10); text-align: center;"> Pricing</h3>
+                      <p style="color: rgb(7, 7, 7); text-align: justify;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-3 pl-4"style="margin-top: 10px;"id="divs">
+                  <div  data-aos="zoom-in-up"class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://img.pikbest.com/png-images/qiantu/map-location-icon-gif-animation_2691647.png!w700wp" alt="Card image cap"style="width:180px; height:70px ;padding-top: 10px; padding-left: 100px;">
+                    <div class="card-body">
+                      <h3 style="color: rgb(13, 13, 14); text-align: center;">Innovative Tools</h3>
+                      <p style="color: rgb(5, 5, 5); text-align: justify;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                     </div>
+                     <div class="col-sm-3 pl-4"style="margin-top: 10px;"id="divs">
+                  <div data-aos="zoom-in-up" class="card" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://e7.pngegg.com/pngimages/358/398/png-clipart-graphics-technical-support-customer-service-computer-icons-technical-support-customer-service-thumbnail.png" alt="Card image cap"style="width:180px; height:70px ;padding-top: 10px; padding-left: 100px;">
+                    <div class="card-body">
+                      <h3 style="color: rgb(15, 15, 15); text-align: center;">Dedicated Support</h3>
+                      <p style="color: rgb(13, 13, 14); text-align: justify;" class="card-text">Magnis etiam fusce tempus condimentum montes sodales pharetra pretium.</p>
+                    </div>
+                  </div>
+                     </div>
+               
+                </div>
+                
+              </div>
+              <!-- <h4 style="text-align: center; margin-top: 30px;">WHO WE ARE</h4><br> -->
+              <div style="text-align:left; margin-top: 80px; padding-left: 20px;padding-right: 20px;">
+                <h1 style="font-size: 2rem;padding-left: 20px;color: lightseagreen;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">What is GetTrade?</h1>
+                
+                <div class="AboutWrap">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8 col-sm-12 col-xs-12">
+                        <p class="last-updated" style="color: rgb(7, 7, 7); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 1.25rem; margin-top: 30px; text-align: justify;">
+                          Malesuada vulputate pharetra natoque morbi id ex nec eleifend neque interdum. Cras vel scelerisque dis nisi magnis phasellus tempor. Nostra lobortis sagittis nulla finibus metus.
+                          Dis laoreet pharetra fusce feugiat est habitant diam eros senectus rhoncus. Ad suscipit curabitur primis taciti dolor.
+                        </p>
+                        <button type="button" class="btn btn-outline-info" ><a href="{% url 'more' %}" style="text-decoration: none;">Discover More</a></button>
+                      </div>
+                      
+                      <div class="col-md-4 col-sm-12 col-xs-12">
+                        <img src="https://kitnew.moxcreative.com/gettrade/wp-content/uploads/sites/8/2022/11/Ilus-3.png" width="100%" height="auto" style="margin-right: 30px;">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    <div data-aos="fade-up" style="background-image: url('https://assets.entrepreneur.com/content/3x2/2000/1680806731-shutterstock-1940652163.jpg?format=pjeg&auto=webp&crop=4:3'); width: 100%; border-radius: 12px;">
+      <div class="row">
+        <div class="col-sm-4 ">
+          <h4 style="padding-top: 10px; padding-left: 40px; color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">RELIEBALE COMPANY</h4>
+          <h1 style="font-size: xx-large; padding-left: 40px; padding-right: 20px; color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Investments will make you grow</h1>
+        </div>
+        <div class="col-sm-8" >
+          <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: justify;">Vehicula si vel phasellus iaculis interdum ex sociosqu id. Ullamcorper habitasse litora pharetra dictum mauris at vestibulum conubia placerat. Nostra odio fames sollicitudin nisl nulla fringilla enim. Inceptos felis maximus euismod venenatis purus mattis dignissim enim. Euismod ligula ullamcorper id vel velit scelerisque gravida. Blandit senectus platea tempus eros donec.
+  
+            <br><br>Viverra bibendum platea maximus conubia dictumst lorem hendrerit euismod. Nam pretium litora vestibulum amet magna ridiculus inceptos. Interdum erat fames arcu sodales volutpat nisl mollis tincidunt pellentesque porttitor. Sociosqu venenatis suspendisse nibh eros imperdiet scelerisque. Lacus consequat natoque fames quisque placerat molestie venenatis a consectetur interdum.</p>
+        </div>
+      </div>    
+    </div>
+
+    <div>
+     
+    </div>
+     </div>
+     <section  id="about">
+    <h1 style="text-shadow: 2px 2px 4px #161616;text-align: center; color: rgb(17, 17, 17); margin-top: 30px;">AboutUs</h1>
+    <div class="container">
+      <div class="row">
+          <div class="col sm-4"data-aos="flip-up">
+              <img src="https://webkit.moxcreative.com/invoux/wp-content/uploads/sites/12/2023/05/portrait-of-a-positive-successful-indian-or-arabian-trader-stock-market-broker-investor-sitting.jpg" width="450" height="350" style="margin-top: 40px; border-radius: 12px;"id="images" >
+          </div>
+          <div class="col sm-4">
+            <h1 style="color: rgb(10, 102, 182); margin-top: 20px;">Building prosperity, one investment at a time</h1>
+            <p style="color: rgb(10, 102, 182); text-align: justify; margin-top: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large;">
+              Torquent pulvinar a aliquet metus cursus si etiam. Conubia aenean pulvinar laoreet tortor aptent consectetuer mauris. Praesent nunc augue magna facilisi vestibulum nam.</p>
+            <div class="row">
+              <div class="col"data-aos="fade-left">
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Cubilia donec eleifend</p>
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Hendrerit at litora venenatis</p>
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Sed non nibh convallis</p>
+              </div>
+              <div class="col"data-aos="fade-right">
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Cubilia donec eleifend</p>
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Hendrerit at litora venenatis</p>
+                <p style="color: rgb(10, 102, 182);"><i class="fa-solid fa-check" style="color: rgb(233, 63, 11);"></i> Sed non nibh convallis</p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+   </div>
+  
+ <div class="row" style="margin-top: 2%;">
+                <div class="col-sm-12" style="margin: 0 auto;">
+                  <div class="row" style="padding-left: 40px;">
+              
+                <div class="col-sm-4 " style="margin-top: 10px;" >
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://www.pngkit.com/png/detail/416-4162393_my-investment-comments-investment-icon-png.png" alt="Card image cap" style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Investing</h3>
+                      <p class="card-text" style="text-align: justify;">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 "style="margin-top: 10px;">
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://p1.hiclipart.com/preview/925/573/196/investment-icon-workflow-icon-business-icon-statistics-icon-yellow-text-material-property-rectangle-png-clipart.jpg" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Trading</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-4 "style="margin-top: 10px;">
+                  <div  data-aos="zoom-in-up"class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjae8s7nnFCpJ9zMySavn88-7R-mzOyYiVwA&usqp=CAU" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Mutual Friend</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                     </div>
+                  </div>
+                  <div class="row" style="padding-left: 40px;">
+              
+                <div class="col-sm-4 " style="margin-top: 10px;">
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;  box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                      <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/3953/3953553.png" alt="Card image cap" style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Wealth </h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 "style="margin-top: 10px;">
+                  <div data-aos="zoom-in-up" class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaN8QUJa7iLVN3Wpj9q3i20ReDa4P07xCrvw&usqp=CAU" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;"> Investment</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                </div><div class="col-sm-4 "style="margin-top: 10px;">
+                  <div  data-aos="zoom-in-up"class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;box-shadow: 4px 4px 4px rgba(247, 238, 238, 0.5);">
+                    <img class="card-img-top" src="https://thumbs.dreamstime.com/b/crypto-invest-icon-trendy-logo-concept-white-b-background-cryptocurrency-economy-finance-collection-suitable-use-131189176.jpg" alt="Card image cap"style="width:70px; height:70px ;padding-top: 10px; padding-left: 10px; margin-left:30%;">
+                    <div class="card-body">
+                      <h3 style="text-align: center;">Advisory</h3>
+                      <p class="card-text">Tellus litora curabitur consequat risus vestibulum purus leo tempus adipiscing vitae ut neque sem.</p>
+                    </div>
+                  </div>
+                     </div>
+                  </div>
+                </div>
+
+<div>
+  
+</div>
+
+
+
+
+
+
+                <div class="container" style="margin: 0 auto;padding-left: 20px; padding-right: 20px;">
+                  <div class="row">
+                      <div class="col sm-4"data-aos="flip-left" style="margin-top: 60px;">
+                          <img src="https://webkit.moxcreative.com/invoux/wp-content/uploads/sites/12/2023/05/happy-asian-man-tablet-or-success-fist-on-isolated-studio-background-for-financial-growth-stock-m-e1684670451322.jpg" width="450" height="500" style="margin-top: 40px; border-radius: 12px;"id="image">
+                      </div>
+                      <div class="col sm-4" style="margin-top: 80px;">
+                        <h5 style="color: rgb(23, 202, 23); padding-left: 10px;">WHY CHOOSE US</h5>
+
+                        <h1 style="text-shadow: 2px 2px 4px #161616; color: rgb(20, 20, 20); margin-top: 20px; text-align: justify; padding-left: 10px; padding-right: 10px; font-size:xx-large;">Invest transaction with  transaction calculated mind benefit wealth</h1>
+                        <p style="color: rgb(16, 17, 17); text-align: justify; margin-top: 40px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large; padding-left: 20px; padding-right: 20px;">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <div class="row">
+                          <div class="col"data-aos="fade-left">
+                            <h4 style="color: rgb(19, 18, 18); "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153); padding-left: 10px;"></i><b>  Ease of transaction </b></h4>
+                            <p style="color: rgb(16, 17, 17); padding-left: 10px; padding-right: 10px; text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>
+                            <h4 style="color: rgb(12, 12, 12); "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153); padding-left: 10px;"></i><b>  Friendly platform </b></h4>
+                            <p style="color: rgb(19, 20, 20); padding-left: 10px; padding-right: 10px; text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>
+                            <h4 style="color: rgb(19, 18, 18); "><i class="fa-solid fa-circle-exclamation" style="color:rgb(221, 16, 153); padding-left: 10px;"></i><b>  Multiple market</b></h4>
+                            <p style="color: rgb(22, 23, 24); padding-left: 10px; padding-right: 10px;text-align: justify;">Arcu platea semper mattis purus quis praesent condimentum senectus. Platea fringilla sagittis tristique lorem ultricies.</p>                            
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+            
+                  </div>
+            
+               </div>
+
+ </div>
+     </section>
+
+<!-- new -->
+<div>
+
+</div>
+
+
+     <section id="services">
+ <div id="services">
+  <h1 style="text-align: center; margin-top: 50px; color: rgb(212, 14, 136);font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-shadow: 2px 2px 4px black;">SERVICES</h1>
+  <h5 style="text-shadow: 2px 2px 4px #161616; color: green; text-align: center;margin-top: 50px;font-size: large;">WHAT WE OFFER</h5>
+<h1 style="text-shadow: 2px 2px 4px #161616; color:rgb(5, 5, 5); text-align: center; padding-left: 10px;padding-right: 10px;">Unlock financial freedom with smart choices</h1>
+<div id="btn1" style="margin-top: 70px;">
+  <div class="card-group mb-3" style="margin-top: 40px;background-color: rgb(238, 235, 240); padding-left: 15px;">
+    <div class="card mr-3" >
+      <img class="card-img-top img-fluid" src="https://navi.com/blog/wp-content/uploads/2022/06/wealth-management.jpg" alt="Card image cap" style="width: 500px; height: 300px;  border: 2px solid black; border-radius: 12px;" >
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Wealth Management</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mr-3">
+      <img class="card-img-top img-fluid" src="https://career.webindia123.com/career/options/images/invest.jpg" alt="Card image cap" style="width: 500px; height: 300px;  border: 2px solid black; border-radius: 12px;" >
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Invest Management</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mr-3">
+      <img class="card-img-top img-fluid" src="https://www.benchmarkcompany.com/wp-content/uploads/2023/01/market-1024x684.jpg" alt="Card image cap"style="width: 500px; height: 300px;  border: 2px solid black;border-radius: 12px; ">
+      <div class="overlay">
+        <div class="text">
+          <h3 style="text-align: center;">Sales & Trading</h3>
+          <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="card-group mb-3" style="margin-top: 40px;background-color: rgb(238, 235, 240); padding-left: 15px;">
+  <div class="card mr-3" >
+    <img class="card-img-top img-fluid" src="https://www.investopedia.com/thmb/w2i4B0jDPTBCT_MeAYCgxfp3IQI=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/Primary_Images-421ad583334747108aab43b54152822f.jpg" alt="Card image cap" style="width: 500px; height: 300px;  border: 2px solid black;border-radius: 12px;">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Crypto Investment</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card mr-3">
+    <img class="card-img-top img-fluid" src="https://image.cnbcfm.com/api/v1/image/107017923-1645373318428-gettyimages-1366475373-2022_jan_02_olemedia_002.jpeg?v=1648669888" alt="Card image cap" style="width: 500px; height: 300px;   border: 2px solid black; border-radius: 12px;">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Instant Exchange</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card mr-3">
+    <img class="card-img-top img-fluid" src="https://fhg-capital.co/assets/img/rules-main.jpg" alt="Card image cap"style="width: 500px; height: 300px;  border: 2px solid black; border-radius: 12px;">
+    <div class="overlay">
+      <div class="text">
+        <h3 style="text-align: center;">Fund Security</h3>
+        <p style="text-align: justify;">Integer mus blandit dictumst ex id nunc congue vulputate inceptos quisque et. Commodo molestie enim ipsum ac ex class faucibus porttitor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>  
+
+ </div>
+
+
+ <div data-aos="fade-up" style="background-image: url('https://assets.entrepreneur.com/content/3x2/2000/1680806731-shutterstock-1940652163.jpg?format=pjeg&auto=webp&crop=4:3'); width: 100%; border-radius: 12px;border-radius: 12px;">
+  <div class="row">
+    <div class="col-sm-4 ">
+      <h1 style="padding-top: 10px; padding-left: 40px; color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Origins</h1>
+      <h5 style="padding-left: 40px;color: aliceblue; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Environmental care is the most profitable investment.</h5>
+      
+    </div>
+    <div class="col-sm-8" >
+      <p style="padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-align: justify; padding-right: 20px;">Enim adipiscing feugiat per dis sem. Auctor duis parturient quisque lorem aenean viverra. Justo cubilia turpis litora ipsum erat fermentum pellentesque maximus torquent. Dictumst sed suscipit purus interdum auctor nam congue ultricies lorem torquent ipsum. Nunc lectus justo curabitur litora rhoncus malesuada quam eu dictumst quisque. Facilisi class sagittis vestibulum porta eu dignissim elit lorem.</p>
+
+        <p style="text-align: justify; padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >Sollicitudin ridiculus efficitur eleifend malesuada a. Purus integer tellus sed ligula tempus ullamcorper ante. Tellus taciti torquent turpis dapibus curae habitant pulvinar letius fermentum. Malesuada eros libero augue posuere sagittis nam vitae ante aenean. Potenti adipiscing augue sollicitudin nunc consequat.</p>
+        
+        <p style="text-align: justify; padding-top: 10px; padding-right: 30px; padding-left: 30px; color: aliceblue;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Class hendrerit eros potenti proin ornare nec blandit. Libero magnis class viverra consectetur turpis sed dui vivamus et. Penatibus taciti tempus sed torquent blandit maximus feugiat. Laoreet euismod eros senectus penatibus fames sollicitudin cursus mattis bibendum finibus tortor. Malesuada sem amet nisl sodales quisque. Natoque nibh hendrerit suscipit blandit netus scelerisque lectus.</p>
+    </div>
+  </div>    
+</div>
+</section>
+
+
+
+<div class="section_title text-center mb-95">
+  <h1 style="margin-top: 30px;  text-shadow: 2px 2px 4px #161616;">Meet Team Members</h1>
+</div>
+<div class="row" style="margin-top: 2%;">
+  <div class="col-sm-8" style="margin: 0 auto;">
+    <div class="row" id="meet">
+
+  <div class="col-sm-4 pl-4" style="margin-top: 20px;" >
+    <div class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;">
+      <img class="card-img-top" src="https://imageio.forbes.com/specials-images/imageserve/61688aa1d4a8658c3f4d8640/Antonio-Juliano/0x0.jpg?format=jpg&width=960" alt="Card image cap" style="border-radius: 50%;">
+      <div class="card-body">
+        <h3>John Mathew</h3>
+        <p class="card-text">Director</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 pl-4" style="margin-top: 20px;">
+    <div class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;">
+      <img class="card-img-top" src="https://media.istockphoto.com/id/635978276/photo/im-happy-to-share-this-message.jpg?s=612x612&w=0&k=20&c=HwvMLR3EFk6iuZLco73JnFrGi748FouSWYT2zkSOihw=" alt="Card image cap" style="border-radius: 50%;">
+      <div class="card-body">
+        <h3>Adam Smith</h3>
+        <p class="card-text">Marketing Expert</p>
+      </div>
+    </div>
+  </div><div class="col-sm-4 pl-4" style="margin-top: 20px;">
+    <div class="cards" style="width: 18rem;border-radius: 12px; border: 3px solid;">
+      <img class="card-img-top" src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?cs=srgb&dl=pexels-daniel-xavier-1239291.jpg&fm=jpg" alt="Card image cap" style="border-radius: 50%;">
+      <div class="card-body">
+        <h3>Soosan mamn</h3>
+        <p class="card-text">Business Consultant</p>
+      </div>
+    </div>
+       </div>
+ 
+  </div>
+  
+</div>
+<section class="container-fluid ">
+  <div class="row">
+    <h1 style="text-shadow: 2px 2px 4px #161616;">  <span style="color: rgb(15, 212, 163);font-size:150%;">|</span>Our Clients  </h1>
+    </div>
+  <div id="swiper-container" class="card-slider-container">
+    <div class="swiper-wrapper">
+      <!-- Review Cards -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <!-- Repeat the above swiper-slide element 9 more times -->
+      <!-- Example -->
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2019/11/Option-3-1024x683.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2019/11/Option-3-1024x683.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2019/11/Option-3-1024x683.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://media.istockphoto.com/id/1303206558/photo/headshot-portrait-of-smiling-businessman-talk-on-video-call.jpg?s=612x612&w=0&k=20&c=hMJhVHKeTIznZgOKhtlPQEdZqb0lJ5Nekz1A9f8sPV8= " alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://www.corporatephotographylondon.com/wp-content/uploads/2019/11/HKstrategies-755-1-1024x683.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://media.istockphoto.com/id/1303206558/photo/headshot-portrait-of-smiling-businessman-talk-on-video-call.jpg?s=612x612&w=0&k=20&c=hMJhVHKeTIznZgOKhtlPQEdZqb0lJ5Nekz1A9f8sPV8=" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI=" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.8</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=612x612&w=0&k=20&c=eU56mZTN4ZXYDJ2SR2DFcQahxEnIl3CiqpP3SOQVbbI=" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review-card">
+          <div class="avatar">
+            <img src="https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-260nw-1714666150.jpg" alt="User Avatar">
+          </div>
+          <h3 class="username">John Brittas</h3>
+          <p class="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel fringilla justo. Vestibulum aliquet pulvinar ligula sed feugiat.</p>
+          <span class="rating pl-3 pr-3">4.5</span>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
+
+
+
+</section>
+
+ <script>
+  var swiper = new Swiper('#swiper-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    }
+  });
+
+</script>
+
+ 
+       
+        
+<!-- FOOTER -->
+<footer class="footer" style="margin-top: 10px;">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4 style="margin-left: 30px;">Company</h4>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Interior Gallery</a></li>
+          <li><a href="">Our Projects</a></li>
+          <li><a href="">Contacts</a></li>
+        </ul>
+      </div> 
+      
+      <div class="footer-col">
+        <h4 style="margin-left: 30px;">Contact Details</h4>
+        <ul>
+          <li style="list-style:none;">jsdjhjks jhbj (P) LTD.</li>
+            <li>lajkd Building, Irinjalakuda,</li>
+            <li>Tfgfgdf , Kerala - India</li>
+            <li>Tel: 0091- 480 - 2833738</li>
+            <li>Mob: 8086600066, 8086611166</li>
+            <li>E-mail: info@evensconstruction.com</li>
+            
+            <li>Evens Construction Pvt Ltd GPS</li>
+        </ul>
+      </div> 
+      <div class="footer-col">
+        <h4 style="margin-left: 30px;">Follow Us</h4>
+        <div class="social-links" style="margin-left: 30px;">
+          <a href=""><i class="fab fa-facebook"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin-in"></i></a>
+          <div style="margin-left: 20px;">
+</div>                
+</div>
+
+      </div> 
+      <div class="footer-col" style="border: 2px solid whitesmoke; margin-left: 30px; height: 200px; width: 300px; padding-top: 20px;">
+        <h4 style="margin-left: 30px;">Need Assistance ?</h4><br>
+        <h5 style="text-align: justify; padding-left: 10px; padding-right: 10px;">Live chat with our service team for information & assistance.</h5>
+        
+          <div style="margin-left: 20px;">
+</div>                
+</div>
+
+      </div> 
+    </div>
+  </div>
+</footer>
+
+
+   
+
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+</body>
+</html>

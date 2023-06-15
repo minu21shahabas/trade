@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(244, 243, 245);
+    }
+    .nav-item a{
+        color: black;
+        font-size: 1.2rem;
+    }
+    .nav-item a:hover{
+        color: orange;
+    }
+    .gradient-brand-color {
+    background-image: -webkit-linear-gradient(0deg, #c91dc0 0%, #ef64e8 100%);
+    background-image: -ms-linear-gradient(0deg, #376be6 0%, #6470ef 100%);
+    color: #fff;
+}
+.contact-info__wrapper {
+    overflow: hidden;
+    border-radius: .625rem .625rem 0 0
+}
+
+@media (min-width: 1024px) {
+    .contact-info__wrapper {
+        border-radius: 0 .625rem .625rem 0;
+        padding: 5rem !important
+    }
+}
+.contact-info__list span.position-absolute {
+    left: 0
+}
+.z-index-101 {
+    z-index: 101;
+}
+.list-style--none {
+    list-style: none;
+}
+.contact__wrapper {
+    background-color: #fff;
+    border-radius: 0 0 .625rem .625rem
+}
+
+@media (min-width: 1024px) {
+    .contact__wrapper {
+        border-radius: .625rem 0 .625rem .625rem
+    }
+}
+@media (min-width: 1024px) {
+    .contact-form__wrapper {
+        padding: 5rem !important
+    }
+}
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(132,138,163,0.1) !important;
+}
+li{
+    list-style:none;
+  }
+   .footer-col{
+    color: aliceblue;
+  }
+    li a {
+  
+  color: rgb(8, 8, 8);
+   font-size:x-large;
+  text-align: center;
+  list-style:none !important;
+    }
+    .footer{
+  width:100%;
+  padding-top: 20px;
+  background-color:#161616;
+  color: aliceblue;
+}
+.container{
+  width:100% !important;
+}
+.footer-col a {
+  padding-top: 20px;
+    color: rgb(249, 249, 253); 
+  }
+</style>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+          <div>
+           <b style="font-size: 30px;"> MyTradings</b>
+        </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item">
+                <b><a class="nav-link" href="{% url 'homes' %}"style="margin-right: 50px;">
+                  Home
+                 </b></a>            </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="" style="margin-right: 50px;">
+                  About
+                </b></a>            </li>
+              <li class="nav-item">
+                <b><a class="nav-link" href="" style="margin-right: 50px;">
+                  Services
+                </b></a>            </li> 
+                <li class="nav-item">
+                  <b><a class="nav-link" href="{% url 'con' %}" style="margin-right: 50px;">
+                   Contact
+                  </b></a>         </li>  
+                  <li class="nav-item">
+                    <b><a class="nav-link" href="{% url 'log' %}" style="margin-right: 50px;">
+                     Logout
+                    </b></a>         </li> 
+                  
+                    </div>   
+            </ul>
+          </div>  
+        </nav>
+        <div class="container" style="padding-top: 50px; padding-bottom: 50px; ">
+          <div class="contact__wrapper shadow-lg mt-n9">
+              <div class="row no-gutters">
+                  <div class="col-lg-5 contact-info__wrapper gradient-brand-color p-5 order-lg-2">
+                      <h3 class="color--white mb-5">Contact</h3>
+          
+                      <ul class="contact-info__list list-style--none position-relative z-index-101">
+                          <li class="mb-4 pl-4">
+                              <span class="position-absolute"><i class="fas fa-envelope"></i></span> test@test.com
+                          </li>
+                          <li class="mb-4 pl-4">
+                              <span class="position-absolute"><i class="fas fa-phone"></i></span> +32 71 123 456
+                          </li>
+                          <li class="mb-4 pl-4">
+                              <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> E6K
+                              <br> Quai de la gare
+                              <br> 6000 Charleroi
+          
+                              <!-- <div class="mt-3">
+                                  <a href="https://www.google.com/maps" target="_blank" class="text-link link--right-icon text-white">Itinéraire <i class="link__icon fa fa-directions"></i></a>
+                              </div> -->
+                          </li>
+                      </ul>
+          
+                      <figure class="figure position-absolute m-0 opacity-06 z-index-100" style="bottom:0; right: 10px">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="444px" height="626px">
+                              <defs>
+                                  <linearGradient id="PSgrad_1" x1="0%" x2="81.915%" y1="57.358%" y2="0%">
+                                      <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="1"></stop>
+                                      <stop offset="100%" stop-color="rgb(0,54,207)" stop-opacity="0"></stop>
+                                  </linearGradient>
+          
+                              </defs>
+                              <path fill-rule="evenodd" opacity="0.302" fill="rgb(72, 155, 248)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                              <path fill="url(#PSgrad_1)" d="M816.210,-41.714 L968.999,111.158 L-197.210,1277.998 L-349.998,1125.127 L816.210,-41.714 Z"></path>
+                          </svg>
+                      </figure>
+                  </div>
+          
+                  <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                      <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                          <div class="row">
+                              <div class="col-sm-6 mb-3">
+                                  <div class="form-group">
+                                      <label class="required-field" for="firstName">First Name</label>
+                                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                                  </div>
+                              </div>
+          
+                              <div class="col-sm-6 mb-3">
+                                  <div class="form-group">
+                                      <label for="lastName">Last Name</label>
+                                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                                  </div>
+                              </div>
+          
+                              <div class="col-sm-6 mb-3">
+                                  <div class="form-group">
+                                      <label class="required-field" for="email">Email</label>
+                                      <input type="text" class="form-control" id="email" name="email" placeholder="email id">
+                                  </div>
+                              </div>
+          
+                              <div class="col-sm-6 mb-3">
+                                  <div class="form-group">
+                                      <label for="phone">Téléphone</label>
+                                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="PhoneNumber">
+                                  </div>
+                              </div>
+          
+                              <div class="col-sm-12 mb-3">
+                                  <div class="form-group">
+                                      <label class="required-field" for="message">Comment Your Message</label>
+                                      <textarea class="form-control" id="message" name="message" rows="4" placeholder="message"></textarea>
+                                  </div>
+                              </div>
+          
+                              <div class="col-sm-12 mb-3">
+                                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                              </div>
+          
+                          </div>
+                      </form>
+                  </div>
+                  <!-- End Contact Form Wrapper -->
+          
+              </div>
+          </div>
+      </div>
+        
+
+      <footer class="footer" style="margin-top: 10px;">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4 style="margin-left: 30px;">Company</h4>
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Interior Gallery</a></li>
+                <li><a href="">Our Projects</a></li>
+                <li><a href="">Contacts</a></li>
+              </ul>
+            </div> 
+            
+            <div class="footer-col">
+              <h4 style="margin-left: 30px;">Contact Details</h4>
+              <ul>
+                <li style="list-style:none;">jsdjhjks jhbj (P) LTD.</li>
+                  <li>lajkd Building, Irinjalakuda,</li>
+                  <li>Tfgfgdf , Kerala - India</li>
+                  <li>Tel: 0091- 480 - 2833738</li>
+                  <li>Mob: 8086600066, 8086611166</li>
+                  <li>E-mail: info@evensconstruction.com</li>
+                  
+                  <li>Evens Construction Pvt Ltd GPS</li>
+              </ul>
+            </div> 
+            <div class="footer-col">
+              <h4 style="margin-left: 30px;">Follow Us</h4>
+              <div class="social-links" style="margin-left: 30px;">
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <div style="margin-left: 20px;">
+      </div>                
+      </div>
+      
+            </div> 
+            <div class="footer-col" style="border: 2px solid whitesmoke; margin-left: 30px; height: 200px; width: 300px; padding-top: 20px;">
+              <h4 style="margin-left: 30px;">Need Assistance ?</h4><br>
+              <h5 style="text-align: justify; padding-left: 10px; padding-right: 10px;">Live chat with our service team for information & assistance.</h5>
+              
+                <div style="margin-left: 20px;">
+      </div>                
+      </div>
+      
+            </div> 
+          </div>
+        </div>
+      </footer>
+      
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>        
+</body>
+</html>
